@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: regulatory-rhinoceros-java-springboot-gitops
+  description: This is GitOps manifest for regulatory-rhinoceros-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: regulatory-rhinoceros-java-springboot
+    janus-idp.io/tekton: regulatory-rhinoceros-java-springboot 
+    backstage.io/kubernetes-id: regulatory-rhinoceros-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:regulatory-rhinoceros-java-springboot
